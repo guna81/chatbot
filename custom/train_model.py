@@ -22,13 +22,9 @@ model = Pipeline([
     ('classifier', DecisionTreeClassifier()),
 ])
 
-# model = Pipeline([
-#     ('tfidf', TfidfVectorizer()),
-#     ('classifier', LogisticRegression()),
-# ])
 
 training_data = process_data()
 
 model.fit(training_data[0], training_data[1])
 
-dump(model, 'models/chat_model.joblib')
+dump(model, 'custom/models/chat_model.joblib')
