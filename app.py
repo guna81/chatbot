@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import json
-from bot import chat
+from chatbot import chatbot
 
 # from flask_cors import CORS
 
@@ -14,7 +14,7 @@ def chatbot_api():
         prompt = request.json["prompt"]
         multi_response = request.json["multi_response"]
         # Check for predefined responses
-        responses = chat(prompt)
+        responses = chatbot(prompt)
         
         result = responses if multi_response else responses[0]
         # Generate JSON response for the platform (replace with your platform's specific format)
